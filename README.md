@@ -8,7 +8,7 @@
 5.Breadboard      
 6.Jumper wires             
 7.Capacitor(?) for coupling & filtering           
-8. Amplifier (PAM8610 / LM386)     
+8.Amplifier (PAM8610 / LM386)     
 9.Battery
 
 
