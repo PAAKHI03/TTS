@@ -19,10 +19,7 @@ void setup() {
     Serial.begin(9600); // Initialize serial communication for debugging
     pinMode(pirPin, INPUT);
 
-    // Initialize Talkie library (if required)
-    // Refer to the Talkie library documentation for the correct initialization method
-    // For example, if Talkie library requires no initialization, you can omit this part
-    // voice.begin();
+   
 }
 
 void loop() {
