@@ -7,7 +7,7 @@
 
 3.Speaker      
 
-4.Resistors (for the speaker)      
+4.Resistors (for the speaker)    (ig: 220 ohms)   
 
 5.Breadboard      
 
