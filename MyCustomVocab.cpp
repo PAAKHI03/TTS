@@ -1,4 +1,3 @@
-//#include <avr/pgmspace.h>
 #include "MyCustomVocab.h"
 
 const char paragraph1[] PROGMEM = "This is the first sentence of your paragraph. ";
