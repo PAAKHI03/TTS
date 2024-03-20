@@ -1,0 +1,38 @@
+#include <Talkie.h>
+#include "MyCustomVocab.h"
+
+Talkie voice;
+
+const int spPARAGRAPH1 = 0;
+const int spPARAGRAPH2 = 1;
+const int spPARAGRAPH3 = 2;
+
+const char* const paragraphs[] PROGMEM = {
+    paragraph1,
+    paragraph2,
+    paragraph3
+};
+// PIR Sensor pin
+const int pirPin = 2;
+
+void setup() {
+    Serial.begin(9600); // Initialize serial communication for debugging
+    pinMode(pirPin, INPUT);
+
+    // Initialize Talkie library (if required)
+    // Refer to the Talkie library documentation for the correct initialization method
+    // For example, if Talkie library requires no initialization, you can omit this part
+    // voice.begin();
+}
+
+void loop() {
+    // Check if PIR sensor detects motion
+    if (digitalRead(pirPin) == HIGH) {
+        // Iterate through each paragraph and say it
+        for (int i = 0; i < sizeof(paragraphs) / sizeof(paragraphs[0]); i++) {
+            const char* paragraph = reinterpret_cast<const char*>(pgm_read_word(&paragraphs[i]));
+            voice.say(reinterpret_cast<const uint8_t*>(paragraph));
+            delay(500); // Adjust delay as needed between paragraphs
+        }
+    }
+}
