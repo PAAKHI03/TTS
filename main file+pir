@@ -31,5 +31,11 @@ void loop() {
             voice.say(reinterpret_cast<const uint8_t*>(paragraph));
             delay(500); // Adjust delay as needed between paragraphs
         }
+
+// Wait for human to leave the area before speaking again
+        while (digitalRead(pirPin) == HIGH) {
+            delay(100); // Wait for human to leave the area
+        }
+
     }
 }
